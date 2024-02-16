@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: black;
+            color: red;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .login-container {
+            margin-top: 100px;
+            border: 2px solid red; /* Añade un borde rojo alrededor del contenedor */
+            padding: 20px; /* Agrega un espacio interno para que el contenido no se pegue al borde */
+            display: inline-block; /* Para que el contenedor no se extienda al 100% del ancho */
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .login-container button[type="submit"],
+        .login-container input[type="button"],
+        .Registrarse {
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .Registrarse {
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Iniciar sesión</h2>
+        <form id="loginForm" action="{{ url_for('session.login') }}" method="post">
+            <input type="text" name="nombre" id="nombre" placeholder="Nombre de usuario" required><br>
+            <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" required><br>
+            <button type="submit" value="">Iniciar sesión</button>
+            <a class="Registrarse" href="/Registar" target="_blank" rel="noopener noreferrer">Registrarse</a>
+
+        </form>
+        <div id="message"></div>
+    </div>
+
+</body>
+</html>

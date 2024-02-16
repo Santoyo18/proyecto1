@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Equipos</title>
+    <style>
+        body {
+            background-color: black;
+            color: red;
+            font-family: Arial, sans-serif;
+        }
+
+        .delete-button {
+            background-color: #ff3333;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ff3333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    {% include 'partials/nav.html' %}
+    <h3>Lista de Equipos</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID Pc</th>
+                <th>marca</th>
+                <th>codigo</th>
+                <th>color</th>
+                <th>descripcion</th>
+                <th>estado</th>
+                <th>Acción</th> <!-- Columna para el botón de eliminar -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for Pc in data %}
+                <form action="{{ url_for('Pc.delete', id=Pc.idPc) }}" method="post">
+                    <tr>
+                        <td>{{ Pc.idPc }}</td>
+                        <td>{{ Pc.marca }}</td>
+                        <td>{{ Pc.codigo }}</td>
+                        <td>{{ Pc.color }}</td>
+                        <td>{{ Pc.desp }}</td>
+                        <td>
+                            {% if Pc.estado %}
+                                Prestado
+                            {% else %}
+                                No prestado
+                            {% endif %}
+                        </td>
+                        <td>
+                            <button class="delete-button">Eliminar</button>
+                            <button formaction="{{ url_for('Pc.edit', id=Pc.idPc) }}" class="delete-button">Devolución</button>
+                            <button formaction="{{ url_for('Pc.editt', id=Pc.idPc) }}" class="delete-button">Prestamo</button>
+                        </td>
+                    </tr>
+                </form>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Script para manejar la eliminación del equipo -->
+    <script>
+        function eliminarEquipo(idPc) {
+            // Aquí debes implementar la lógica para eliminar el equipo con el ID proporcionado
+            // Puedes usar JavaScript para enviar una solicitud al servidor para eliminar el equipo de la base de datos
+            // Por ejemplo, puedes utilizar AJAX para enviar una solicitud DELETE al servidor
+            // Una vez que el equipo se elimine correctamente, puedes recargar la página o actualizar la lista de equipos sin recargar la página
+            console.log('Eliminar equipo con ID: ' + idPc);
+        }
+    </script>
+</body>
+</html>

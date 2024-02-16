@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>equipo</title>
+    <link rel="stylesheet" href="static/bootstrap-5.3.0-alpha1-dist/resources/css/app.css">
+    <script type="module" src="static/bootstrap-5.3.0-alpha1-dist/resources/js/app.js" defer></script>
+    <link rel="stylesheet" href="static/bootstrap-5.3.0-alpha1-dist/resources/css/Bienvenido.css">
+    <script type="module" src="static/bootstrap-5.3.0-alpha1-dist/resources/js/Bienvenido.js" defer></script>
+    
+</head>
+
+<body>
+    {% include 'partials/nav.html' %}
+
+    <div class="container divPrincipal mt-5">
+        <h1>Registro de Computadoras </h1>
+
+        <form action="{{ url_for('Pc.add') }}" method="post">
+            
+            <div class="form-group">
+                <input type="hidden" class="form-control" id="idPc" name="Pc">
+                <label for="marca">Marca:</label>
+                <input type="text" class="form-control" id="marca" placeholder="Ingrese la marca" name="marca">
+            </div>
+            <div class="form-group">
+                <label for="modelo">Codigo:</label>
+                <input type="text" class="form-control" id="codigo" placeholder="Ingrese el codigo" name="codigo">
+            </div>
+            <div class="form-group">
+                <label for="serial">Color:</label>
+                <input type="text" class="form-control" id="color" placeholder="Ingrese el color" name="color">
+            </div>
+            <div class="form-group">
+                <label for="serial">Descripcion:</label>
+                <input type="text" class="form-control" id="serial"
+                    placeholder="Ingrese una descripcion de el equipo" name="desp">
+            </div>
+            <div class="form-group">
+                <label for="serial">Estado:</label>
+                <div>
+                    <div><input name="estado" type="radio" value="1">Prestado</div>
+                    <div><input name="estado" type="radio" value="0">No prestado</div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary"  value="insertar">Registrar</button>
+        </form>
+
+        
+    </div>
+</body>
+
+</html>
