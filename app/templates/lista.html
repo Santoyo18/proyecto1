@@ -71,13 +71,25 @@
                         <td>
                             <button class="delete-button">Eliminar</button>
                             <button formaction="{{ url_for('Pc.edit', id=Pc.idPc) }}" class="delete-button">Devolución</button>
-                            <button formaction="{{ url_for('Pc.editt', id=Pc.idPc) }}" class="delete-button">Prestamo</button>
+                            <button onclick="realizarPrestamo('{{ Pc.idPc }}')" class="delete-button">Prestamo</button>
                         </td>
                     </tr>
                 </form>
             {% endfor %}
         </tbody>
     </table>
+    <div id="mensaje"></div>
+    <script>
+        function realizarPrestamo(idPc) {
+            // Aquí puedes agregar la lógica necesaria para realizar el préstamo del equipo.
+            // Por ejemplo, puedes enviar una solicitud al servidor para realizar el préstamo.
+            // Luego, mostrar un mensaje al usuario.
+            
+            // Aquí simplemente mostraremos un mensaje de ejemplo.
+            document.getElementById('mensaje').innerText = 'Se ha prestado el equipo con ID: ' + idPc;
+        }
+    </script>
+    
 
     <!-- Script para manejar la eliminación del equipo -->
     <script>
