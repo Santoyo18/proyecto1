@@ -6,8 +6,7 @@ bp = Blueprint('Celador', __name__)
 
 @bp.route('/')
 def index():
-    data = Celador.query.all()
-    return render_template("index.html", data=data)
+    return render_template("inicio.html")
 
 @bp.route('/add', methods=['POST'])
 def add():

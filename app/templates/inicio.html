@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENA - Servicio Nacional de Aprendizaje</title>
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: green;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <!-- Enlace a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Estilos personalizados para el carrusel -->
+    <style>
+        /* Ajuste de tamaño para las imágenes */
+        .carousel-inner img {
+            width: 40%;
+            height: 40%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SENA - Servicio Nacional de Aprendizaje</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/inicio">Iniciar Sesion</a></li>
+            <li><a href="/Registar">Registrarse</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h2>¡Bienvenido al SENA!</h2>
+        <p>El Servicio Nacional de Aprendizaje es una institución del Gobierno de Colombia que ofrece programas de formación profesional para el trabajo. Nuestra misión es brindar oportunidades de formación integral para el empleo y el desarrollo humano sostenible, a través de la educación para el trabajo y el emprendimiento, con enfoque diferencial e innovador, y una gestión participativa y transparente.</p>
+    </section>
+
+    <!-- Carrusel -->
+    <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicadores -->
+            <ul class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ul>
+            <!-- Imágenes del carrusel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ url_for('static', filename='/imagenes/images.png') }}" alt="Imagen 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='/imagenes/imagen 2.avif') }}" alt="Imagen 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='/imagenes/imagen3.jpg') }}" alt="Imagen 3">
+                </div>
+            </div>
+            <!-- Controles del carrusel -->
+            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <footer>
+        <p>Derechos reservados © SENA 2024</p>
+    </footer>
+
+    <!-- Enlace a jQuery, Popper.js y Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

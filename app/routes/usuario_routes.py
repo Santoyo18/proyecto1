@@ -57,3 +57,7 @@ def delete(id):
     except Exception as e:
         db.session.rollback()
         return f"Error al eliminar usuario: {str(e)}", 500    
+    
+@bp.route('/registrar')  # Añadir corchetes alrededor de 'POST'
+def inicio():
+    return render_template("registrar.html")

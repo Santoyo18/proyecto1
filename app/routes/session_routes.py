@@ -4,6 +4,7 @@ from app.models.Celador import Celador
 
 auth_bp = Blueprint('session', __name__)
 
+
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -36,3 +37,7 @@ def logout():
     logout_user()
     flash('You have been logged out.', 'info')
     return redirect(url_for('Celador.index'))
+
+@auth_bp.route('/inicio')  # Añadir corchetes alrededor de 'POST'
+def inicio():
+    return render_template("index.html")

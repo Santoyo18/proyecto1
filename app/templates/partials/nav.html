@@ -1,55 +1,106 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">ALMACEN SENA</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown"
-            aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item ">
-                    <a class="nav-link " href="{{ url_for('Pc.index') }}" role="button" aria-expanded="false">
-                        <i class="fas fa-laptop"></i> REGISTRO DE EQUIPOS
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link " href="{{ url_for('Pc.XD2') }}" role="button" aria-expanded="false">
-                        <i class="fas fa-laptop"></i> LISTA DE EQUIPOS
-                    </a>/Pc2
-                </li>
-                
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-info-circle"></i> ACERCA DE NOSOTROS
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-blue" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a class="dropdown-item" href="{{ url_for('Pc.XD') }}">Detalles de Servicio</a></li>
-                        <li><a class="dropdown-item" href="{{ url_for('Pc.XD') }}">Condiciones de Uso</a></li>
-                        <li><a class="dropdown-item" href="{{ url_for('Pc.XD') }}">Lo que Hacemos</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-envelope"></i> CONTACTENOS
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a class="dropdown-item" href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i> Twitter</a></li>
-                        <li><a class="dropdown-item" href="https://www.instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
-                        <li><a class="dropdown-item" href="https://www.facebook.com"><i class="fab fa-facebook"></i> Facebook</a></li>
-                        <li><a class="dropdown-item" href="https://www.youtube.com"><i class="fab fa-youtube"></i> Youtube</a></li>
-                        <li><a class="dropdown-item" href="https://www.tiktok.com/en/"><i class="fab fa-tiktok"></i> TikTok</a></li>
-                        <li><a class="dropdown-item" href="https://oferta.senasofiaplus.edu.co/sofia-oferta/inicio-sofia-plus.html">Otros</a></li>
-                    </ul>
-                </li>
-                <form action="{{ url_for('session.logout') }}" method="post">     
-                    <button type="submit" class="btn btn-primary">CERRAR SESION</button>
-                </form>
-            </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALMACEN SENA</title>
+    <!-- Enlaces a Bootstrap CSS y FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Estilos personalizados -->
+    <style>
+        .navbar {
+            background-color: #343a40; /* Color de fondo del navbar */
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link {
+            color: #ffffff; /* Color de texto de los enlaces */
+            font-size: 1.1rem;
+            margin-right: 10px;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffffff; /* Color de texto al pasar el mouse por encima */
+        }
+        .navbar-toggler {
+            border-color: #ffffff; /* Color del ícono del botón de alternancia */
+        }
+        .navbar-toggler-icon {
+            color: #ffffff; /* Color del icono del botón de alternancia */
+        }
+        .btn-logout {
+            background-image: url('{{ url_for("static", filename="/imagenes/gif3.gif") }}'); /* Reemplaza 'ruta/a/tu/imagen.gif' con la URL de tu GIF */
+            background-size: cover;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .btn-logout:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ALMACEN SENA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown"
+                aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('Pc.index') }}">
+                            <i class="fas fa-laptop"></i> REGISTRO DE EQUIPOS
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('Pc.XD2') }}">
+                            <i class="fas fa-laptop"></i> LISTA DE EQUIPOS
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-info-circle"></i> ACERCA DE NOSOTROS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="{{ url_for('Pc.XD') }}">Detalles de Servicio</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('Pc.XD') }}">Condiciones de Uso</a></li>
+                            <li><a class="dropdown-item" href="{{ url_for('Pc.XD') }}">Lo que Hacemos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-envelope"></i> CONTACTENOS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li><a class="dropdown-item" href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a class="dropdown-item" href="https://www.instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
+                            <li><a class="dropdown-item" href="https://www.facebook.com"><i class="fab fa-facebook"></i> Facebook</a></li>
+                            <li><a class="dropdown-item" href="https://www.youtube.com"><i class="fab fa-youtube"></i> Youtube</a></li>
+                            <li><a class="dropdown-item" href="https://www.tiktok.com/en/"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                            <li><a class="dropdown-item" href="https://oferta.senasofiaplus.edu.co/sofia-oferta/inicio-sofia-plus.html">Otros</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <form action="{{ url_for('session.logout') }}" method="post">
+                            <button type="submit" class="btn btn-logout">CERRAR SESION</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    </nav>
+</body>
+</html>

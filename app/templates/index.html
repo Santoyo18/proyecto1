@@ -6,16 +6,19 @@
     <title>Login</title>
     <style>
         body {
-            background-color: black;
             color: red;
             font-family: Arial, sans-serif;
             text-align: center;
+            background-image: url('{{ url_for("static", filename="/imagenes/gif2.gif") }}');
+            background-size: cover;
+            background-position: center;
         }
         .login-container {
             margin-top: 100px;
             border: 2px solid red; /* Añade un borde rojo alrededor del contenedor */
             padding: 20px; /* Agrega un espacio interno para que el contenido no se pegue al borde */
             display: inline-block; /* Para que el contenedor no se extienda al 100% del ancho */
+            background-color: black; /* Fondo del contenedor negro */
         }
         .login-container input[type="text"],
         .login-container input[type="password"] {
@@ -51,7 +54,7 @@
 <body>
     <div class="login-container">
         <h2>Iniciar sesión</h2>
-        <form id="loginForm" action="{{ url_for('session.login') }}" method="post">
+        <form id="loginForm" action="{{ url_for('session.login') }}" method="post" onsubmit="return showWelcomeAlert()">
             <input type="text" name="nombre" id="nombre" placeholder="Nombre" required><br>
             <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" required><br>
             <button type="submit" value="">Iniciar sesión</button>
@@ -61,5 +64,12 @@
         <div id="message"></div>
     </div>
 
+    <script>
+        function showWelcomeAlert() {
+            var nombre = document.getElementById("nombre").value;
+            alert("¡Bienvenido, " + nombre + "!");
+            return true; // Para enviar el formulario después de mostrar la alerta
+        }
+    </script>
 </body>
 </html>

@@ -9,6 +9,9 @@
             background-color: black;
             color: red;
             font-family: Arial, sans-serif;
+            background-image: url('{{ url_for("static", filename="/imagenes/gif3.gif") }}');
+            background-size: cover;
+            background-position: center;
         }
 
         .delete-button {
@@ -23,6 +26,8 @@
         .table {
             border-collapse: collapse;
             width: 100%;
+            background-color: #333; /* Cambiar el color de fondo de la tabla */
+            color: white; /* Cambiar el color del texto de la tabla */
         }
 
         th, td {
@@ -34,6 +39,14 @@
         th {
             background-color: #ff3333;
             color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #555; /* Cambiar el color de fondo de las filas pares */
+        }
+
+        tr:nth-child(odd) {
+            background-color: #444; /* Cambiar el color de fondo de las filas impares */
         }
     </style>
 </head>
